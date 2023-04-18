@@ -3,6 +3,7 @@
 namespace App\Http\Livewire\Profile;
 
 use App\Models\User;
+use App\Providers\RouteServiceProvider;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Validation\Rule;
 use Livewire\Component;
@@ -39,5 +40,15 @@ class UpdateProfileInformation extends Component
         auth()->user()->save();
 
         return Redirect::route('profile.edit')->with('status', 'profile-updated');
+    }
+
+    public function sendVerification() {
+        if (auth()->user()->hasVerifiedEmail()) {
+            return redirect()->intended(RouteServiceProvider::HOME);
+        }
+
+        auth()->user()->sendEmailVerificationNotification();
+
+        return Redirect::route('profile.edit')->with('status', 'verification-link-sent');
     }
 }

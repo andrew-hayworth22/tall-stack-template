@@ -8,7 +8,6 @@
             <x-card>
                 <div class="max-w-xl">
                     @livewire('profile.update-profile-information')
-                    {{--@include('partials.profile.update-profile-information-form')--}}
                 </div>
             </x-card>
 
@@ -20,7 +19,7 @@
 
             <x-card>
                 <div class="max-w-xl">
-                    @include('partials.profile.delete-user-form')
+                    @livewire('profile.delete-user-form')
                 </div>
             </x-card>
         </div>
