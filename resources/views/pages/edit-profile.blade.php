@@ -13,7 +13,7 @@
 
             <x-card>
                 <div class="max-w-xl">
-                    @include('partials.profile.update-password-form')
+                    @livewire('profile.update-password-form')
                 </div>
             </x-card>
 

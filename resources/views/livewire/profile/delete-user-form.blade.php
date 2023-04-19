@@ -9,10 +9,10 @@
         </p>
     </header>
 
-    <x-danger-button
+    <x-buttons.danger-base
         x-data=""
         x-on:click.prevent="$dispatch('open-modal', 'confirm-user-deletion')"
-    >Delete Account</x-danger-button>
+    >Delete Account</x-buttons.danger-base>
 
     <x-modal name="confirm-user-deletion" :show="$errors->userDeletion->isNotEmpty()" focusable>
         <form wire:submit.prevent="deleteUser" class="p-6">
@@ -29,13 +29,13 @@
             </div>
 
             <div class="mt-6 flex justify-end">
-                <x-secondary-button x-on:click="$dispatch('close')">
+                <x-buttons.secondary-base x-on:click="$dispatch('close')">
                     Cancel
-                </x-secondary-button>
+                </x-buttons.secondary-base>
 
-                <x-danger-button class="ml-3">
+                <x-buttons.danger-base class="ml-3">
                     Delete Account
-                </x-danger-button>
+                </x-buttons.danger-base>
             </div>
         </form>
     </x-modal>

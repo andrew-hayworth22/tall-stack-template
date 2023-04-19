@@ -9,7 +9,7 @@
         </p>
     </header>
 
-    <form wire:submit.prevent="submit" class="mt-6 space-y-6">
+    <form wire:submit.prevent="updateProfile" class="mt-6 space-y-6">
         <x-form.text-field model="name" label="Name" required autofocus autocomplete="name"/>
 
         <div>
@@ -35,7 +35,7 @@
         </div>
 
         <div class="flex items-center gap-4">
-            <x-primary-button> Save </x-primary-button>
+            <x-buttons.primary-base> Save </x-buttons.primary-base>
 
             @if (session('status') === 'profile-updated')
                 <p

@@ -8,7 +8,7 @@
                     id="user-menu-button"
                     aria-expanded="false" aria-haspopup="true"
                     @click="showProfileDropdown = !showProfileDropdown">
-                View Profile
+                {{ auth()->user()->name }}
             </button>
         </div>
 

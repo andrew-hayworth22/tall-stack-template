@@ -30,7 +30,7 @@ class UpdateProfileInformation extends Component
         return view('livewire.profile.update-profile-information');
     }
 
-    public function submit() {
+    public function updateProfile() {
         auth()->user()->fill($this->validate());
 
         if (auth()->user()->isDirty('email')) {
@@ -39,7 +39,7 @@ class UpdateProfileInformation extends Component
 
         auth()->user()->save();
 
-        return Redirect::route('profile.edit')->with('status', 'profile-updated');
+        return back()->with('status', 'profile-updated');
     }
 
     public function sendVerification() {
