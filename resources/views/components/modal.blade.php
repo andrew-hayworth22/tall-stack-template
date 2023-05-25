@@ -46,7 +46,7 @@
                 </div>
 
                 @hasSection('buttons')
-                    <div class="mt-5 sm:mt-4 sm:flex sm:flex-row-reverse">
+                    <div class="mt-5 sm:mt-4">
                         @yield('buttons')
                     </div>
                 @endif
