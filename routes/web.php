@@ -24,7 +24,7 @@ Route::get('/dashboard', function () {
 
 Route::get('/admin', function () {
     return view('pages.admin');
-})->middleware('role:super-admin')->name('admin');
+})->middleware('role:Super Admin')->name('admin');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

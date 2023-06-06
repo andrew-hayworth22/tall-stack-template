@@ -12,7 +12,7 @@ class UserSeeder extends Seeder {
         User::factory()->create([
             'name' => 'Super Admin',
             'email' => 'superadmin@example.com',
-        ])->assignRole('super-admin');
+        ])->assignRole('Super Admin');
 
         User::factory()->create([
             'name' => 'User',

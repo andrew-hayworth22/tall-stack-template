@@ -14,6 +14,6 @@ class RolesAndPermissionsSeeder extends Seeder {
         Permission::create(['name' => 'view admin screen']);
         Permission::create(['name' => 'edit permissions']);
 
-        Role::create(['name' => 'super-admin']);
+        Role::create(['name' => 'Super Admin']);
     }
 }
