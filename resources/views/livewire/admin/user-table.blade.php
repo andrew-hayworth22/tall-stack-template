@@ -27,7 +27,9 @@
                     </x-table.pieces.cell>
 
                     <x-table.pieces.cell class="text-sm">
-                        <a href="#" class="text-indigo-600 hover:text-indigo-900">Edit<span class="sr-only">, Lindsay Walton</span></a>
+                        <x-buttons.primary-base x-data="{}" x-on:click="window.livewire.emitTo('modals.user-modal', 'show', {{ $user->id }})">
+                            Edit <span class="sr-only">, {{ $user->name }}</span>
+                        </x-buttons.primary-base>
                     </x-table.pieces.cell>
                 </tr>
             @endforeach
