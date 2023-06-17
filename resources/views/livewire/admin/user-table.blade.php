@@ -22,7 +22,7 @@
 
                     <x-table.pieces.cell class="text-sm">
                         @foreach($user->getRoleNames() as $role)
-                            {{ $role }}
+                            {{ $role . ((!$loop->last) ? ',' : '') }}
                         @endforeach
                     </x-table.pieces.cell>
 

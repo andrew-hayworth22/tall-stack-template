@@ -11,11 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('samples', function (Blueprint $table) {
+        Schema::create('sample_types', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('description', 5000);
-            $table->foreignId('sample_type_id')->nullable()->constrained()->nullOnDelete();
             $table->timestamps();
         });
     }
@@ -25,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('samples');
+        Schema::dropIfExists('sample_types');
     }
 };
