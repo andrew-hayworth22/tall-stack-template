@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class SampleType extends Model
+class LookupType extends Model
 {
     use HasFactory;
 
@@ -13,7 +13,7 @@ class SampleType extends Model
         'name'
     ];
 
-    public function samples() {
-        $this->hasMany(Sample::class);
+    public function lookups() {
+        return $this->hasMany(Lookup::class);
     }
 }

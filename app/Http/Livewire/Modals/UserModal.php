@@ -35,4 +35,11 @@ class UserModal extends Modal
         $this->emit('updatedUsers');
         $this->show = false;
     }
+
+    public function delete() {
+        $this->user->delete();
+
+        $this->emit('updatedUsers');
+        $this->show = false;
+    }
 }

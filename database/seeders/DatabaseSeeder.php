@@ -13,6 +13,8 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         $this->call(RolesAndPermissionsSeeder::class);
+        $this->call(LookupTypeSeeder::class);
+        $this->call(LookupSeeder::class);
 
         if(app()->isLocal()) {
             $this->call(UserSeeder::class);

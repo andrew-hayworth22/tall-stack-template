@@ -5,9 +5,9 @@ namespace Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\SampleType>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Lookup>
  */
-class SampleTypeFactory extends Factory
+class LookupFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -17,7 +17,7 @@ class SampleTypeFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => fake()->word()
+            'name' => fake()->name()
         ];
     }
 }
