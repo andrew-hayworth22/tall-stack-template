@@ -5,10 +5,13 @@ namespace App\Http\Livewire\Modals;
 use App\Http\Livewire\Modal;
 use App\Models\User;
 use Livewire\Component;
+use Spatie\Permission\Models\Role;
 
 class UserModal extends Modal
 {
     public User $user;
+    public $roles;
+    public $selectedRole;
 
     protected $rules = [
         'user.name' => ['required'],
@@ -16,6 +19,7 @@ class UserModal extends Modal
     ];
     public function render()
     {
+        $this->roles = Role::all();
         return view('livewire.modals.user-modal');
     }
 
@@ -41,5 +45,20 @@ class UserModal extends Modal
 
         $this->emit('updatedUsers');
         $this->show = false;
+    }
+
+    public function addRole() {
+        $role = Role::find($this->selectedRole);
+        $this->user->roles()->save($role);
+
+        $this->user->refresh();
+        $this->emit('updatedUsers');
+    }
+
+    public function removeRole($input) {
+        $this->user->roles()->detach($input);
+
+        $this->user->refresh();
+        $this->emit('updatedUsers');
     }
 }

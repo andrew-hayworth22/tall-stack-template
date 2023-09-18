@@ -4,9 +4,7 @@
             <x-table.pieces.head is-first="true">Name</x-table.pieces.head>
             <x-table.pieces.head>Email</x-table.pieces.head>
             <x-table.pieces.head>Roles</x-table.pieces.head>
-            <x-table.pieces.head>
-                <span class="sr-only">Edit</span>
-            </x-table.pieces.head>
+            <x-table.pieces.head is-empty="true">Edit</x-table.pieces.head>
         @endsection
 
         @section('rows')
@@ -26,7 +24,7 @@
                         @endforeach
                     </x-table.pieces.cell>
 
-                    <x-table.pieces.cell class="text-sm">
+                    <x-table.pieces.cell class="text-sm relative text-right">
                         <x-buttons.primary-base x-data="{}" x-on:click="window.livewire.emitTo('modals.user-modal', 'show', {{ $user->id }})">
                             Edit <span class="sr-only">, {{ $user->name }}</span>
                         </x-buttons.primary-base>
